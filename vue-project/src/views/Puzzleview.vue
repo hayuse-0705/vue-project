@@ -15,15 +15,19 @@
     
     // ... other firebase imports
     import { ref , onMounted, VueElement , createApp} from 'vue'
-    import {collection, onSnapshot , addDoc, doc, deleteDoc, updateDoc, getDocFromCache, loadBundle, QuerySnapshot} from 'firebase/firestore'
+    import {collection, onSnapshot , addDoc, doc, deleteDoc, updateDoc, getDocFromCache, loadBundle, QuerySnapshot, getCountFromServer,query , where} from 'firebase/firestore'
     import {db} from '@/firebase'     
     import { async } from '@firebase/util';
 
     const peacefoundsound = new Audio('./src/assets/se/newpiecefounded.mp3')
+    const puzzlecomplete = new Audio('./src/assets/se/puzzlecompleted.mp3')
 
     const flagid = 1
 
     const puzzledataflag = collection(db,'puzzle-flag')
+    
+
+    let puzzlecount = 0
 
     const flagclass = ref({
 
@@ -87,13 +91,15 @@
     //     console.log("Cached document data:", flagdata.data());
 onMounted( ()=>{
 
-        onSnapshot(puzzledataflag, (querySnapshot) => {
+        onSnapshot(puzzledataflag, async (querySnapshot) => {
+            // const snapshot = getCountFromServer(puzzledataflag)
+            
             peacefoundsound.play()
+            puzzlecount++
             // const listid = document.getElementById("puzzle-frame")
             // const idnum = doc.data().id
             // const puzzleflagdata = await getDocFromCache(puzzledataflag)
             // const peacenum = document.getElementsByClassName("peace-"+idnum)
-            
             querySnapshot.forEach((doc) => {
                 const values={
                     id:doc.id,
@@ -113,7 +119,20 @@ onMounted( ()=>{
                     peacenum[0].style.opacity = "0"
                 }
                 console.log("Current data: ", values)
-            });
+                
+                // const query_ = query(puzzledataflag, where('flag', '==', 'true'))
+                // const snapshot = getCountFromServer(query_);
+                // console.log('count: ', snapshot.data().count);
+                
+            })
+            
+            const query_ = query(puzzledataflag, where('flag', '==', true))
+            const puzzletrues = await getCountFromServer(query_)
+            console.log(puzzletrues.data().count)
+
+            if(puzzletrues.data().count>=144){
+                puzzlecomplete.play()
+            }
             
             // const test2 = listid.children[idnum]
             

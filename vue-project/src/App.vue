@@ -19,6 +19,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/puzzlefound/1">puzzlefound</RouterLink>
         <RouterLink to="/snsupload">snsupload</RouterLink>
         <RouterLink to="/sns">SNS</RouterLink>
+        <RouterLink to="/snsgood">snsgood</RouterLink>
+
       </nav>
     </div>
   </header>

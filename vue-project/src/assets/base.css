@@ -1,3 +1,32 @@
+html, css{
+  /* touch-action:none; */
+}
+
+/* iOSでのデフォルトスタイルをリセット */
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+}
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+
+body{
+  background-color: #162141;
+}
 /* color palette from <https://github.com/vuejs/theme>
 :root {
   --vt-c-white: #ffffff;

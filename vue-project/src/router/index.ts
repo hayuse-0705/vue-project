@@ -72,6 +72,22 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/SNSImageframe.vue')
+    },
+    {
+      path: '/snsgood',
+      name: 'goodbutton',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/SNSImagegood.vue')
+    },
+    {
+      path: '/accountlogin',
+      name: 'Login',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AccountLogin.vue')
     }
   ]
 })
