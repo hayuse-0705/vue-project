@@ -9,18 +9,16 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
-
+<h1>HOME</h1>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/account">account</RouterLink>
-        <RouterLink to="/puzzle">Puzzle</RouterLink>
-        <RouterLink to="/todo">Todo</RouterLink>
-        <RouterLink to="/puzzleconsole">puzzleconsole</RouterLink>
-        <RouterLink to="/puzzlefound/1">puzzlefound</RouterLink>
-        <RouterLink to="/snsupload">snsupload</RouterLink>
-        <RouterLink to="/sns">SNS</RouterLink>
-        <RouterLink to="/snsgood">snsgood</RouterLink>
-
+        <li><RouterLink to="/account">account</RouterLink></li>
+        <li><RouterLink to="/accountlogin">account Login</RouterLink></li>
+        <li><RouterLink to="/puzzle">Puzzle</RouterLink></li>
+        <li><RouterLink to="/puzzlefound/1">pease get</RouterLink></li>
+        <li><RouterLink to="/puzzleconsole">puzzleconsole</RouterLink></li>
+        <li><RouterLink to="/snsupload">snsupload</RouterLink></li>
+        <li><RouterLink to="/sns">SNS</RouterLink></li>
+        <li><RouterLink to="/snsgood">snsgood</RouterLink></li>
       </nav>
     </div>
   </header>
@@ -31,63 +29,81 @@ import HelloWorld from './components/HelloWorld.vue'
 <style scoped>
 header {
   line-height: 1.5;
-  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+h1{
+  color: #fff;
+  font-size: 20px;
   text-align: center;
-  margin-top: 2rem;
+  margin: 30px;
+  height: 30px;
+}
+li a{
+  color:#000000;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.wrapper li{
+    background: #fff;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px auto;
+    width: 260px;
+    padding: 10px 25px;
+    color: #000000;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    border: 1px solid #000000;
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.wrapper li:after{
+  content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #000000;
+    border-right: 3px solid #000000;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
 }
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.wrapper li:hover:after{
+  border-color: #FFF;
 }
-
-nav a:first-of-type {
-  border: 0;
+.wrapper li:nth-child(1){
+  background: #e1b2c5;
 }
-
+.wrapper li:nth-child(2){
+  background: #e1b2c5;
+}
+.wrapper li:nth-child(3){
+  background: #fffacd;
+}
+.wrapper li:nth-child(4){
+  background: #fffacd;
+}
+.wrapper li:nth-child(5){
+  background: #fffacd;
+}
+.wrapper li:nth-child(6){
+  background: #c8d8ff;
+}
+.wrapper li:nth-child(7){
+  background: #c8d8ff;
+}
+.wrapper li:nth-child(8){
+  background: #c8d8ff;
+}
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  
 }
 </style>
