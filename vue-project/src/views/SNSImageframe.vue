@@ -177,9 +177,10 @@ const move = setInterval(() => {
 </script>
 
 <style>
-nav{
-  display: none;
-}
+header{
+        display: none;
+        height: 0%;
+    }
 img{
   width: 100%;
   transition: 0.5s;

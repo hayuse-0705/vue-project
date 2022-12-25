@@ -400,8 +400,9 @@
         width:100%;
         
     }
-    nav{
+    header{
         display: none;
+        height: 0%;
     }
     .nametext{
        
@@ -458,6 +459,7 @@
     }
     .account-login-page{
         height:100vh;
+        position: relative;
     }
     .name-text{
         text-align: left;

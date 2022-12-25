@@ -409,9 +409,10 @@ const move = setInterval(() => {
 </script>
 
 <style>
-nav{
-  display: none;
-}
+header{
+        display: none;
+        height: 0%;
+    }
 img{
   width: 100%;
   transition: 0.5s;
@@ -491,5 +492,6 @@ iframe{
     width: 100%;
     height: 100%;
   }
+
 
 </style>

@@ -446,10 +446,10 @@ const uploadclicked = () =>{
   overflow: hidden;
 
 }
-nav{
-  display: none;
-
-}
+header{
+        display: none;
+        height: 0%;
+    }
 h1{
   color: #fff;
   position: relative;

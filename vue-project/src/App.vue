@@ -9,8 +9,9 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
-<h1>HOME</h1>
+    
       <nav>
+        <h1>HOME</h1>
         <li><RouterLink to="/account">account</RouterLink></li>
         <li><RouterLink to="/accountlogin">account Login</RouterLink></li>
         <li><RouterLink to="/puzzle">Puzzle</RouterLink></li>
@@ -27,7 +28,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-header {
+.wrapper {
   line-height: 1.5;
   height: 100vh;
   display: flex;

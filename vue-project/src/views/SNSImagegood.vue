@@ -310,9 +310,10 @@ const goodcountup = async id =>{
     touch-action: none;
 }
 img{width: 100%;}
-nav{
-    display: none;
-}
+header{
+        display: none;
+        height: 0%;
+    }
 #allcontent{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
