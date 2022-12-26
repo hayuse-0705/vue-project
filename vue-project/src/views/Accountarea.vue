@@ -229,7 +229,7 @@
   </g>
             </svg> -->
         </div>
-      <h1>Account-area</h1>
+      <h1>アカウントひろば</h1>
       
       <div v-for="user in users" class="snscontent" :on-load="hoge(user.id)">
         
@@ -240,7 +240,7 @@
         </div>
        <!-- <a :href="path.Filepath">{{ path.Filepath }}</a>  -->
       </div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/aDYKXnr2IIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/aDYKXnr2IIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       <!-- <p>{{ todo.filepath }}</p> -->
     </div>
 </template>
@@ -409,9 +409,10 @@ const move = setInterval(() => {
 </script>
 
 <style>
-nav{
-  display: none;
-}
+header{
+        display: none;
+        height: 0%;
+    }
 img{
   width: 100%;
   transition: 0.5s;
@@ -442,8 +443,31 @@ img{
   transition: 3s;
 }
 h1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   text-align: center;
   color: white;
+  font-weight: bold;
+  font-family:"Nico Moji";
+  font-size: 5rem;
+  opacity: 0.5;
+  animation-name: titleanime;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes titleanime{
+  0%{
+    transform:translate(-50%,-50%) scale(100%);
+  }
+  50%{
+    transform:translate(-50%,-50%) scale(150%);
+  }
+  100%{
+    transform:translate(-50%,-50%) scale(100%);
+  }
 }
 iframe{
   position: absolute;
@@ -491,5 +515,17 @@ iframe{
     width: 100%;
     height: 100%;
   }
+.Account-are{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+body{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
 </style>

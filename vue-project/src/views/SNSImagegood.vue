@@ -230,7 +230,7 @@
             </svg>
         </div>
       <h1>画像をタップしていいねしよう！</h1>
-      {{ paths.path}}
+      <!-- {{ paths.path}} -->
         <div id="allcontent">
             <div v-for="path in paths" class="goodimage" @click="goodcountup(path.id)"  ontouchstart="">
                 <!-- <img :src="todo.Filepath" alt=""> -->
@@ -310,15 +310,17 @@ const goodcountup = async id =>{
     touch-action: none;
 }
 img{width: 100%;}
-nav{
-    display: none;
-}
+header{
+        display: none;
+        height: 0%;
+    }
 #allcontent{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     width: 90%;
     margin: 0 auto;
+    overflow: scroll;
 }
 .goodimage{
     transition: 0.1s;

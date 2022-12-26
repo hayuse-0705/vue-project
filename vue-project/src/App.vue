@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+
+
 </script>
 
 <template>
@@ -9,25 +12,25 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
-<h1>HOME</h1>
+    
       <nav>
-        <li><RouterLink to="/account">account</RouterLink></li>
-        <li><RouterLink to="/accountlogin">account Login</RouterLink></li>
-        <li><RouterLink to="/puzzle">Puzzle</RouterLink></li>
-        <li><RouterLink to="/puzzlefound/1">pease get</RouterLink></li>
-        <li><RouterLink to="/puzzleconsole">puzzleconsole</RouterLink></li>
-        <li><RouterLink to="/snsupload">snsupload</RouterLink></li>
-        <li><RouterLink to="/sns">SNS</RouterLink></li>
-        <li><RouterLink to="/snsgood">snsgood</RouterLink></li>
+        <h1>HOME</h1>
+        <RouterLink to="/account"><li>Account</li></RouterLink>
+        <RouterLink to="/accountlogin"><li>Account Login</li></RouterLink>
+        <RouterLink to="/puzzle"><li>Puzzle</li></RouterLink>
+        <RouterLink to="/puzzlefound/1"><li>Pease get</li></RouterLink>
+        <RouterLink to="/puzzleconsole"><li>Puzzleconsole</li></RouterLink>
+        <RouterLink to="/snsupload"><li>SNSupload</li></RouterLink>
+        <RouterLink to="/sns"><li>SNS</li></RouterLink>
+        <RouterLink to="/snsgood"><li>SNSgood</li></RouterLink>
       </nav>
     </div>
   </header>
 
   <RouterView />
 </template>
-
 <style scoped>
-header {
+.wrapper {
   line-height: 1.5;
   height: 100vh;
   display: flex;
@@ -41,13 +44,16 @@ h1{
   margin: 30px;
   height: 30px;
 }
-li a{
+a li {
   color:#000000;
   text-decoration: none;
   font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
+a{
+  color:#000000;
+  text-decoration: none;
+}
 .wrapper li{
     background: #fff;
     border-radius: 50px;
@@ -77,30 +83,30 @@ li a{
     transition: 0.3s ease-in-out;
 }
 .wrapper li:hover:after{
-  border-color: rgb(181, 181, 181);
+  border-color: #FFF;
 }
-.wrapper li:nth-child(1){
+.wrapper a:nth-child(2) li{
   background: #e1b2c5;
 }
-.wrapper li:nth-child(2){
+.wrapper a:nth-child(3) li{
   background: #e1b2c5;
 }
-.wrapper li:nth-child(3){
+.wrapper a:nth-child(4) li{
   background: #fffacd;
 }
-.wrapper li:nth-child(4){
+.wrapper a:nth-child(5) li{
   background: #fffacd;
 }
-.wrapper li:nth-child(5){
+.wrapper a:nth-child(6) li{
   background: #fffacd;
 }
-.wrapper li:nth-child(6){
+.wrapper a:nth-child(7) li{
   background: #c8d8ff;
 }
-.wrapper li:nth-child(7){
+.wrapper a:nth-child(8) li{
   background: #c8d8ff;
 }
-.wrapper li:nth-child(8){
+.wrapper a:nth-child(9) li{
   background: #c8d8ff;
 }
 @media (min-width: 1024px) {

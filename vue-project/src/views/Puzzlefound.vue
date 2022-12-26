@@ -405,9 +405,10 @@ function GlowAnimeControl() {
 </script>
 
 <style>
-nav{
-    display: none;
-}
+header{
+        display: none;
+        height: 0%;
+    }
 iframe{
     border: none;
     position: absolute;
