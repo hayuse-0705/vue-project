@@ -1,7 +1,7 @@
 <template>
     <div class="Account-area">
       <div class="backimage"></div>
-      <h1>SNS</h1>
+      <h1>みんなのさくひんひろば</h1>
       <div v-for="path in paths" class="snscontent" :on-load="hoge(path.id)">
         <!-- <img :src="todo.Filepath" alt=""> -->
         <div class="imagesize" >
@@ -19,6 +19,9 @@
   import { useRoute } from 'vue-router'
 import { connectStorageEmulator } from '@firebase/storage';
 
+
+const snsload = new Audio('./src/assets/se/snssound.mp3')
+const snsgood = new Audio('./src/assets/se/snsgood.mp3')
   const ImagepathRef = collection(db,'Image_path')
 //   const puzzledatabase = doc(db,'puzzle-flag',route.params.id)
   const paths = ref([
@@ -46,6 +49,7 @@ import { connectStorageEmulator } from '@firebase/storage';
     
       
       onSnapshot(ImagepathRef, (querySnapshot) => {
+        snsgood.play();
         const fbTodos = []
         querySnapshot.forEach((doc) => {
           let goodtmp = doc.data().goodcount
@@ -207,6 +211,31 @@ h1{
   text-align: center;
   color: white;
   position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family:"Nico Moji";
+  font-size: 5rem;
+  opacity: 0.5;
+  animation-name: titleanime;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes titleanime{
+  0%{
+    transform:translate(-50%,-50%) scale(100%);
+  }
+  50%{
+    transform:translate(-50%,-50%) scale(150%);
+  }
+  100%{
+    transform:translate(-50%,-50%) scale(100%);
+  }
 }
 .backimage{
   position: absolute;

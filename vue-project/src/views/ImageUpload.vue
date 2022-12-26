@@ -229,13 +229,16 @@
   </g>
             </svg>
       </div>
-      <h1>画像を投稿しよう！</h1><div id="preview-img"><img id="myimg" src="" alt=""></div>
-      <label id="selectimage">
-        <p>写真を選択</p>
-        <input id="fileimage" type="file" @change="fileUpload" accept=".png, .jpg , .HEIC , .jpeg" />
-      </label>
-      <div id="upload_button" style="display:none">
-        <input type="button" value="アップロード" @click="uploadclicked">
+      <h1>画像を投稿しよう！</h1>
+      <div id="image_form">
+        <div id="preview-img"><img id="myimg" src="" alt=""></div>
+        <label id="selectimage">
+          <p>写真を選択</p>
+          <input id="fileimage" type="file" @change="fileUpload" accept=".png, .jpg , .HEIC , .jpeg" />
+        </label>
+        <div id="upload_button" style="display:none">
+          <input type="button" value="アップロード" @click="uploadclicked">
+        </div>
       </div>
         <!-- アップロードされた画像が以下に表示される -->
         <!-- <img id="imageframe" v-if="img_url" :src="img_url" /> -->
@@ -365,6 +368,8 @@ const uploadclicked = () =>{
   let file = fileimage[0]
 
   const imageframe =document.getElementById("myimg")
+  const imageform = document.getElementById("image_form")
+  imageform.classList.add("uploadform")
 
   imageframe.classList.add("uploadImage")
 
@@ -455,6 +460,8 @@ h1{
   position: relative;
   text-align: center;
   margin-top: 50px;
+  font-weight: bold;
+    font-family:"Nico Moji";
 }
 #selectimage{
   width: 80%;
@@ -504,6 +511,20 @@ h1{
   }
   100%{
     transform:translate(0%,-200%);
+    opacity: 0;
+  }
+}
+
+.uploadform{
+  animation-name: formanime;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes formanime{
+  0%{
+    opacity: 1;
+  }
+  100%{
     opacity: 0;
   }
 }
